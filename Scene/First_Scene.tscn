@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scene/First_Scene.gd" type="Script" id=1]
+[ext_resource path="res://highman/Highman.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scene/Scene2_back.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="First_Scene" type="Label"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 396.838
+margin_top = 147.732
+margin_right = -425.162
+margin_bottom = -402.268
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.270588, 0.360784, 0.94902, 1 )
+text = "Here is the start"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -395.0
+margin_top = -147.658
+margin_right = 418.0
+margin_bottom = 394.342
+rect_pivot_offset = Vector2( -332.21, -44.4983 )
+color = Color( 0.129412, 0.639216, 0.858824, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = -40.0177
+margin_top = 1.4093
+margin_right = 229.982
+margin_bottom = 69.4093
+custom_fonts/font = SubResource( 2 )
+text = "First Scene"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scene2_back" type="Button" parent="."]
+margin_left = -336.568
+margin_top = -115.169
+margin_right = -200.568
+margin_bottom = -68.1685
+custom_fonts/font = SubResource( 3 )
+text = "Back"
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="Scene2_back" method="_on_Button_pressed"]
+[connection signal="pressed" from="Scene2_back" to="Scene2_back" method="_on_Scene2_back_pressed"]
