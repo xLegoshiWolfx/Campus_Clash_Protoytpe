@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scene/Human Timer.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Human Timer Scene.gd" type="Script" id=2]
+[ext_resource path="res://Scene/AI Timer Label.gd" type="Script" id=3]
+
+[node name="Human Timer Scene" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Human Timer Label" type="Label" parent="."]
+margin_left = 19.0
+margin_top = 17.0
+margin_right = 143.0
+margin_bottom = 70.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Human Timer Node" type="Timer" parent="."]
+
+[node name="AI Timer Label" type="Label" parent="."]
+margin_left = 860.0
+margin_top = 23.0
+margin_right = 983.0
+margin_bottom = 75.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AI Timer Node" type="Timer" parent="."]
+
+[connection signal="timeout" from="Human Timer Node" to="." method="_on_Human_Timer_Node_timeout"]
+[connection signal="timeout" from="AI Timer Node" to="." method="_on_AI_Timer_Node_timeout"]
