@@ -5,6 +5,9 @@ var velocity : Vector2 = Vector2()
 
 onready var sprite : Sprite = get_node("res://PNG/Character_idle.png")
 
+func _on_ready():
+	get_node("res://Scene/Currency Scene.tscn")
+	
 func _physics_process(delta):
 	velocity.x = 0
 	velocity.y = 0
@@ -17,8 +20,6 @@ func _physics_process(delta):
 		velocity.y -= speed
 	if Input.is_action_pressed("move_down"):
 		velocity.y += speed
-	
-	
 		
 	move_and_slide(velocity, Vector2.UP)
 	
