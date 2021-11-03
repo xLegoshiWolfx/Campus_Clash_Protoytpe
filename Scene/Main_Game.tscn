@@ -10,10 +10,10 @@
 [ext_resource path="res://Scene/Player_1.gd" type="Script" id=8]
 [ext_resource path="res://Scene/AI Timer Label.gd" type="Script" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 57.8546, 58.7715 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=5]
 size = 30
 font_data = ExtResource( 6 )
 
@@ -88,14 +88,14 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Human Player/Player_1"]
 position = Vector2( 351.632, 423.205 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Button" type="Button" parent="Human Player"]
 margin_left = -107.674
 margin_top = 498.22
 margin_right = 25.3253
 margin_bottom = 543.221
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
 text = "Back"
 flat = true
 __meta__ = {

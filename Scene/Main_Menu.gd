@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://Scene/TileMap.tscn")
+	get_tree().change_scene("res://Scene/Main_Game.tscn")
 
 func _on_Button2_pressed():
 	get_tree().change_scene("res://Scene/Second_Scene.tscn")
