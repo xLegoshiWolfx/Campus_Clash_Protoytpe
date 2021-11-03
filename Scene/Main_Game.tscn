@@ -5,7 +5,7 @@
 [ext_resource path="res://PNG/Character_idle.png" type="Texture" id=3]
 [ext_resource path="res://PNG/Chloe_Tower.png" type="Texture" id=4]
 [ext_resource path="res://Scene/Human Timer Scene.gd" type="Script" id=5]
-[ext_resource path="res://highman/Highman.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Fonts/game-battles-font/GameBattlesRegular-RjXo.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scene/Human Timer.gd" type="Script" id=7]
 [ext_resource path="res://Scene/Player_1.gd" type="Script" id=8]
 [ext_resource path="res://Scene/AI Timer Label.gd" type="Script" id=9]
@@ -126,6 +126,7 @@ margin_top = 662.22
 margin_right = 229.325
 margin_bottom = 707.221
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Back"
 flat = true
 __meta__ = {
