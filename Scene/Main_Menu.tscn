@@ -29,10 +29,10 @@ __meta__ = {
 }
 
 [node name="Start_game_button" type="Button" parent="."]
-margin_left = 431.752
-margin_top = 134.712
-margin_right = 593.752
-margin_bottom = 180.712
+margin_left = 432.752
+margin_top = 137.712
+margin_right = 594.752
+margin_bottom = 183.712
 custom_fonts/font = SubResource( 1 )
 text = "Start Game"
 flat = true
