@@ -1,11 +1,11 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Tile Map/Tile_map_texture.tres" type="TileSet" id=1]
 [ext_resource path="res://Scene/AI Building.gd" type="Script" id=2]
 [ext_resource path="res://PNG/Character_idle.png" type="Texture" id=3]
 [ext_resource path="res://PNG/Chloe_Tower.png" type="Texture" id=4]
 [ext_resource path="res://Scene/Human Timer Scene.gd" type="Script" id=5]
-[ext_resource path="res://Fonts/game-battles-font/GameBattlesRegular-RjXo.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Fonts/Font_Designs/Menu_font_styles.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Scene/Human Timer.gd" type="Script" id=7]
 [ext_resource path="res://Scene/Player_1.gd" type="Script" id=8]
 [ext_resource path="res://Scene/AI Timer Label.gd" type="Script" id=9]
@@ -21,11 +21,7 @@ extents = Vector2( 1349.06, 1688.78 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 57.8546, 58.7715 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 30
-font_data = ExtResource( 6 )
-
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 724.616, 748.158 )
 
 [node name="TileMap" type="Node2D"]
@@ -155,8 +151,10 @@ margin_left = -68.674
 margin_top = 662.22
 margin_right = 64.325
 margin_bottom = 707.221
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.286275, 0.290196, 0.294118, 1 )
+custom_colors/font_color_pressed = Color( 0.105882, 0.180392, 0.415686, 1 )
 text = "Back"
 flat = true
 __meta__ = {
@@ -173,7 +171,7 @@ __meta__ = {
 
 [node name="BirtaCollision" type="CollisionShape2D" parent="Birta Building"]
 position = Vector2( -2286.64, -61.5903 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="BirtaSprite" type="Sprite" parent="Birta Building"]
 position = Vector2( -1449.15, 903.846 )
@@ -190,7 +188,7 @@ __meta__ = {
 
 [node name="BirtaCollision" type="CollisionShape2D" parent="Birta Building2"]
 position = Vector2( -2286.64, -61.5903 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="BirtaSprite" type="Sprite" parent="Birta Building2"]
 position = Vector2( -1449.15, 903.846 )
