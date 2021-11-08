@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Tile Map/Tile_map_texture.tres" type="TileSet" id=1]
 [ext_resource path="res://Scene/AI Building.gd" type="Script" id=2]
@@ -14,15 +14,23 @@
 [ext_resource path="res://Scene/Human Building.gd" type="Script" id=12]
 [ext_resource path="res://Scene/AIBuildingButton.gd" type="Script" id=13]
 [ext_resource path="res://Scene/HumanBuildingButton.gd" type="Script" id=14]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1349.06, 1688.78 )
+[ext_resource path="res://frame_unit.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Script/Game.gd" type="Script" id=16]
+[ext_resource path="res://Script/frame_unit.gd" type="Script" id=17]
+[ext_resource path="res://Script/SelectedDraw.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 57.8546, 58.7715 )
+extents = Vector2( 1349.06, 1688.78 )
 
 [sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 57.8546, 58.7715 )
+
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 724.616, 748.158 )
+
+[sub_resource type="ShaderMaterial" id=5]
+
+[sub_resource type="CanvasItemMaterial" id=1]
 
 [node name="TileMap" type="Node2D"]
 position = Vector2( 67, 52 )
@@ -45,7 +53,7 @@ __meta__ = {
 [node name="HumanCollision" type="CollisionShape2D" parent="Human Building"]
 position = Vector2( 10.3472, 47.7863 )
 scale = Vector2( 0.676405, 0.423712 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="HumanBuildingSprite" type="Sprite" parent="Human Building"]
 position = Vector2( 177.954, 128.3 )
@@ -63,7 +71,7 @@ __meta__ = {
 [node name="AICollision" type="CollisionShape2D" parent="AI Building"]
 position = Vector2( 1351.18, -917.085 )
 scale = Vector2( 0.676451, 0.423397 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="AIBuildingSprite" type="Sprite" parent="AI Building"]
 position = Vector2( 1500, -807.692 )
@@ -144,7 +152,7 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Human Player/Player_1"]
 position = Vector2( 351.632, 423.205 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="BackButton" type="Button" parent="Human Player"]
 margin_left = -68.674
@@ -171,7 +179,7 @@ __meta__ = {
 
 [node name="BirtaCollision" type="CollisionShape2D" parent="Birta Building"]
 position = Vector2( -2286.64, -61.5903 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="BirtaSprite" type="Sprite" parent="Birta Building"]
 position = Vector2( -1449.15, 903.846 )
@@ -188,12 +196,42 @@ __meta__ = {
 
 [node name="BirtaCollision" type="CollisionShape2D" parent="Birta Building2"]
 position = Vector2( -2286.64, -61.5903 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="BirtaSprite" type="Sprite" parent="Birta Building2"]
 position = Vector2( -1449.15, 903.846 )
 scale = Vector2( 5.83051, 7.08928 )
 texture = ExtResource( 10 )
+
+[node name="Moving_unit" type="Node2D" parent="."]
+script = ExtResource( 16 )
+
+[node name="YSort" type="YSort" parent="Moving_unit"]
+
+[node name="Unit" type="KinematicBody2D" parent="Moving_unit/YSort" groups=[
+"unit",
+] instance=ExtResource( 15 )]
+material = SubResource( 5 )
+position = Vector2( 725.69, 339.063 )
+script = ExtResource( 17 )
+
+[node name="Unit2" type="KinematicBody2D" parent="Moving_unit/YSort" groups=[
+"unit",
+] instance=ExtResource( 15 )]
+material = SubResource( 5 )
+position = Vector2( 885.072, 335.876 )
+script = ExtResource( 17 )
+
+[node name="Unit3" type="KinematicBody2D" parent="Moving_unit/YSort" groups=[
+"unit",
+] instance=ExtResource( 15 )]
+material = SubResource( 1 )
+position = Vector2( 185.701, 280.687 )
+script = ExtResource( 17 )
+unit_owner = 1
+
+[node name="SelectedDraw" type="Node2D" parent="Moving_unit"]
+script = ExtResource( 18 )
 
 [connection signal="timeout" from="Currency/Human Timer Node" to="Currency" method="_on_Human_Timer_Node_timeout"]
 [connection signal="timeout" from="Currency/AI Timer Node" to="Currency" method="_on_AI_Timer_Node_timeout"]
