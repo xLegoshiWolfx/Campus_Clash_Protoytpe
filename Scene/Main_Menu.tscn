@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scene/Main_Menu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Font_Designs/Menu_font_styles.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Background_video/video_2.ogv" type="VideoStream" id=3]
+[ext_resource path="res://Scene/VideoPlayer.gd" type="Script" id=4]
 
 [node name="Main_Menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,6 +13,7 @@ margin_right = 1614.0
 margin_bottom = 905.0
 stream = ExtResource( 3 )
 autoplay = true
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
