@@ -20,7 +20,6 @@ __meta__ = {
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
 margin_right = 1614.0
 margin_bottom = 905.0
-mouse_default_cursor_shape = 2
 stream = ExtResource( 3 )
 autoplay = true
 __meta__ = {
