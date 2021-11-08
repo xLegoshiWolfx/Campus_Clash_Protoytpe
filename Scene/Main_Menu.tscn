@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scene/Main_Menu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Font_Designs/Menu_font_styles.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Background_video/video_2.ogv" type="VideoStream" id=3]
 
 [node name="Main_Menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -16,6 +17,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 1614.0
+margin_bottom = 905.0
+mouse_default_cursor_shape = 2
+stream = ExtResource( 3 )
+autoplay = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Start_game_button" type="Button" parent="."]
 margin_left = 450.0
 margin_top = 250.939
@@ -23,7 +34,7 @@ margin_right = 987.0
 margin_bottom = 318.939
 rect_rotation = 0.182242
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.0509804, 0.223529, 0.592157, 1 )
 custom_colors/font_color_hover = Color( 0.286275, 0.290196, 0.294118, 1 )
 custom_colors/font_color_pressed = Color( 0.105882, 0.180392, 0.415686, 1 )
 text = "Start Game"
@@ -33,13 +44,13 @@ __meta__ = {
 }
 
 [node name="Menu_button" type="Button" parent="."]
-margin_left = 600.0
+margin_left = 598.366
 margin_top = 350.0
-margin_right = 840.0
-margin_bottom = 418.0
+margin_right = 896.366
+margin_bottom = 434.0
 rect_rotation = 0.277264
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.0509804, 0.223529, 0.592157, 1 )
 custom_colors/font_color_hover = Color( 0.286275, 0.290196, 0.294118, 1 )
 custom_colors/font_color_pressed = Color( 0.105882, 0.180392, 0.415686, 1 )
 text = "Menu"
@@ -55,7 +66,7 @@ margin_right = 822.0
 margin_bottom = 518.0
 rect_rotation = 0.277264
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.0509804, 0.223529, 0.592157, 1 )
 custom_colors/font_color_hover = Color( 0.286275, 0.290196, 0.294118, 1 )
 custom_colors/font_color_pressed = Color( 0.105882, 0.180392, 0.415686, 1 )
 text = "Quit"
