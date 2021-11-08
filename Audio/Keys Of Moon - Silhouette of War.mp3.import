@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Keys Of Moon - Silhouette of War.mp3-d4906d937fc30e2cf7313d9c98302093.mp3str"
+
+[deps]
+
+source_file="res://Audio/Keys Of Moon - Silhouette of War.mp3"
+dest_files=[ "res://.import/Keys Of Moon - Silhouette of War.mp3-d4906d937fc30e2cf7313d9c98302093.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

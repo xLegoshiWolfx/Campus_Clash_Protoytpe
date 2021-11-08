@@ -9,4 +9,6 @@ func _on_Button2_pressed():
 
 func _on_Quit_button_pressed():
 	get_tree().quit()
-	
+
+func _ready():
+	Audio1.play_music()
