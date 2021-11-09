@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://frame_unit.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Script/Game.gd" type="Script" id=2]
+[ext_resource path="res://Script/SelectedDraw.gd" type="Script" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[node name="Moving_unit" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Unit" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 725.69, 339.063 )
+
+[node name="Unit2" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 885.072, 335.876 )
+
+[node name="Unit3" parent="YSort" instance=ExtResource( 1 )]
+material = SubResource( 1 )
+position = Vector2( 185.701, 280.687 )
+unit_owner = 1
+
+[node name="SelectedDraw" type="Node2D" parent="."]
+script = ExtResource( 3 )

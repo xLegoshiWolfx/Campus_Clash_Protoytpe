@@ -23,9 +23,9 @@ __meta__ = {
 
 [node name="Start_game_button" type="Button" parent="."]
 margin_left = 450.0
-margin_top = 250.939
-margin_right = 987.0
-margin_bottom = 318.939
+margin_top = 247.3
+margin_right = 1121.0
+margin_bottom = 331.3
 rect_rotation = 0.182242
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0.0509804, 0.223529, 0.592157, 1 )
