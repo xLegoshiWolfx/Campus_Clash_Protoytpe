@@ -1,16 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scene/Main_Menu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Font_Designs/Menu_font_styles.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Background_video/video_2.ogv" type="VideoStream" id=3]
 [ext_resource path="res://Scene/VideoPlayer.gd" type="Script" id=4]
+[ext_resource path="res://PNG/Volume_icon.png" type="Texture" id=5]
 
 [node name="Main_Menu" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
-margin_right = 1614.0
-margin_bottom = 905.0
+margin_left = -3.75549
+margin_top = 0.751831
+margin_right = 1610.24
+margin_bottom = 905.752
 stream = ExtResource( 3 )
 autoplay = true
 script = ExtResource( 4 )
@@ -66,7 +69,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Volume_button" type="Button" parent="."]
+margin_left = 61.8624
+margin_top = 793.663
+margin_right = 168.862
+margin_bottom = 864.663
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Volume_button"]
+position = Vector2( 52.2531, 36.4492 )
+scale = Vector2( 0.0735634, 0.0821259 )
+texture = ExtResource( 5 )
+
+[node name="VSlider" type="VSlider" parent="Volume_button"]
+margin_left = 37.0
+margin_top = -142.978
+margin_right = 73.0
+margin_bottom = -1.97784
+min_value = -60.0
+max_value = 6.0
+tick_count = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="ready" from="VideoPlayer" to="." method="_on_VideoPlayer_ready"]
 [connection signal="pressed" from="Start_game_button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Menu_button" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Quit_button" to="." method="_on_Quit_button_pressed"]
+[connection signal="pressed" from="Volume_button" to="." method="_on_Volume_button_pressed"]
+[connection signal="value_changed" from="Volume_button/VSlider" to="." method="_on_VSlider_value_changed"]

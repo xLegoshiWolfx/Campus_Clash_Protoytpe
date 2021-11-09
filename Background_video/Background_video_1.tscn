@@ -1,22 +1,10 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Background_video/video.ogv" type="VideoStream" id=1]
+[gd_scene format=2]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1595.0
 margin_bottom = 904.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VideoPlayer" type="VideoPlayer" parent="."]
-margin_top = -1.0
-margin_right = 1587.0
-margin_bottom = 898.0
-stream = ExtResource( 1 )
-volume_db = -80.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
