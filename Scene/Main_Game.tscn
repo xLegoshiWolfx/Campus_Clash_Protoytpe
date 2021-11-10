@@ -28,7 +28,6 @@ extents = Vector2( 724.616, 748.158 )
 [sub_resource type="CanvasItemMaterial" id=5]
 
 [node name="TileMap" type="Node2D"]
-position = Vector2( 67, 52 )
 
 [node name="Campus Map" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -60,12 +59,10 @@ __meta__ = {
 }
 
 [node name="HumanCollision" type="CollisionShape2D" parent="Human Main Building"]
-position = Vector2( 10.3472, 47.7863 )
 scale = Vector2( 0.676405, 0.423712 )
 shape = SubResource( 1 )
 
 [node name="HumanBuildingSprite" type="Sprite" parent="Human Main Building"]
-position = Vector2( 177.954, 128.3 )
 scale = Vector2( 3.96259, 3.72751 )
 texture = ExtResource( 4 )
 

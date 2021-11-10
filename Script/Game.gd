@@ -19,11 +19,11 @@ func _unhandled_input(event):
 					unit.get_ref().deselect()
 			selected = []
 			dragging = true
-			drag_start = event.position
+			drag_start = get_global_mouse_position()
 		elif dragging:
 			dragging = false
-			select_draw.update_status(drag_start, event.position, dragging)
-			var drag_end = event.position
+			select_draw.update_status(drag_start,get_global_mouse_position(), dragging)
+			var drag_end = get_global_mouse_position()
 			select_rectangle.extents = (drag_end - drag_start) / 2
 			var space = get_world_2d().direct_space_state
 			var query = Physics2DShapeQueryParameters.new()
@@ -31,12 +31,13 @@ func _unhandled_input(event):
 			query.transform = Transform2D(0,(drag_end + drag_start) / 2)
 			selected = space.intersect_shape(query)
 			for unit in selected:
-				if unit.collider.unit_owner == 0:
-					unit.collider.select()
-					weakref_selected.append(weakref(unit.collider))	
+				if unit.collider.is_in_group("unit"):
+					if unit.collider.unit_owner == 0:
+						unit.collider.select()
+						weakref_selected.append(weakref(unit.collider))	
 	if dragging:
 		if event is InputEventMouseMotion:
-			select_draw.update_status(drag_start, event.position, dragging)
+			select_draw.update_status(drag_start, get_global_mouse_position(), dragging)
 			
 
 			

@@ -4,6 +4,7 @@
 [ext_resource path="res://Script/Game.gd" type="Script" id=2]
 [ext_resource path="res://Script/SelectedDraw.gd" type="Script" id=3]
 
+
 [sub_resource type="CanvasItemMaterial" id=1]
 
 [node name="Moving_unit" type="Node2D"]
