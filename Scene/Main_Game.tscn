@@ -146,7 +146,7 @@ margin_top = -4.29961
 margin_right = 624.74
 margin_bottom = 47.7004
 custom_colors/font_color = Color( 0.054902, 0.129412, 0.933333, 1 )
-text = "Buy Human Unit: 10 Coins"
+text = "Buy Human Units: 20 Coins"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -157,7 +157,7 @@ margin_top = -1.22024
 margin_right = 975.48
 margin_bottom = 48.7798
 custom_colors/font_color = Color( 0.054902, 0.129412, 0.933333, 1 )
-text = "Buy AI Unit: 10 Coins"
+text = "Buy AI Units: 20 Coins"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -222,16 +222,25 @@ script = ExtResource( 16 )
 [node name="YSort" type="YSort" parent="Moving_unit"]
 
 [node name="Unit" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
+visible = false
 material = SubResource( 4 )
 position = Vector2( 292.713, 317.681 )
 
 [node name="Unit2" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
+visible = false
 material = SubResource( 4 )
 position = Vector2( 293.515, 421.402 )
 
 [node name="Unit3" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
+visible = false
 material = SubResource( 5 )
 position = Vector2( 1165.69, 284.251 )
+unit_owner = 1
+
+[node name="Unit4" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
+visible = false
+material = SubResource( 5 )
+position = Vector2( 1171.04, 387.595 )
 unit_owner = 1
 
 [node name="SelectedDraw" type="Node2D" parent="Moving_unit"]
@@ -243,3 +252,5 @@ script = ExtResource( 18 )
 [connection signal="timeout" from="Currency/AI Timer Node" to="Currency/HumanBuildingButton" method="_on_AI_Timer_Node_timeout"]
 [connection signal="pressed" from="Currency/HumanBuildingButton" to="Currency" method="_on_HumanBuildingButton_pressed"]
 [connection signal="pressed" from="Currency/AIBuildingButton" to="Currency" method="_on_AIBuildingButton_pressed"]
+[connection signal="pressed" from="Currency/HumanUnitButton" to="Currency" method="_on_HumanUnitButton_pressed"]
+[connection signal="pressed" from="Currency/AIUnitButton" to="Currency" method="_on_AIUnitButton_pressed"]
