@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Tile Map/Tile_map_texture.tres" type="TileSet" id=1]
+[ext_resource path="res://Script/CameraMovement.gd" type="Script" id=2]
 [ext_resource path="res://PNG/Character_idle.png" type="Texture" id=3]
 [ext_resource path="res://PNG/Chloe_Tower.png" type="Texture" id=4]
 [ext_resource path="res://Scene/Currency.gd" type="Script" id=5]
@@ -346,10 +347,18 @@ unit_owner = 1
 [node name="SelectedDraw" type="Node2D" parent="Moving_unit"]
 script = ExtResource( 18 )
 
+[node name="Camera" type="Node2D" parent="."]
+position = Vector2( 215.647, 77.932 )
+
+[node name="Camera2D" type="Camera2D" parent="Camera"]
+position = Vector2( 480, 320 )
+current = true
+script = ExtResource( 2 )
+
 [connection signal="pressed" from="Campus Map/BackButton" to="Human Player/Player_1" method="_on_Button_pressed"]
 [connection signal="timeout" from="Currency/Human Timer Node" to="Currency" method="_on_Human_Timer_Node_timeout"]
-[connection signal="timeout" from="Currency/AI Timer Node" to="Currency" method="_on_AI_Timer_Node_timeout"]
 [connection signal="timeout" from="Currency/AI Timer Node" to="Currency/HumanBuildingButton" method="_on_AI_Timer_Node_timeout"]
+[connection signal="timeout" from="Currency/AI Timer Node" to="Currency" method="_on_AI_Timer_Node_timeout"]
 [connection signal="pressed" from="Currency/HumanBuildingButton" to="Currency" method="_on_HumanBuildingButton_pressed"]
 [connection signal="pressed" from="Currency/AIBuildingButton" to="Currency" method="_on_AIBuildingButton_pressed"]
 [connection signal="pressed" from="Currency/HumanUnitButton" to="Currency" method="_on_HumanUnitButton_pressed"]
