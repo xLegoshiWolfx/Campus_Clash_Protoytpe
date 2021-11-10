@@ -38,6 +38,8 @@ Audio1="*res://Audio/Audio_1.tscn"
 
 window/size/width=1600
 window/size/height=900
+window/size/resizable=false
+window/size/fullscreen=true
 
 [input]
 
