@@ -216,7 +216,6 @@ position = Vector2( 351.632, 423.205 )
 shape = SubResource( 2 )
 
 [node name="Human Birta Building" type="KinematicBody2D" parent="."]
-visible = false
 position = Vector2( 668.767, 417.505 )
 scale = Vector2( 0.118, 0.156 )
 __meta__ = {
@@ -233,7 +232,6 @@ scale = Vector2( 5.83051, 7.08928 )
 texture = ExtResource( 10 )
 
 [node name="Human Birta Building2" type="KinematicBody2D" parent="."]
-visible = false
 position = Vector2( 861.201, 217.944 )
 scale = Vector2( 0.118, 0.156 )
 __meta__ = {
@@ -250,7 +248,6 @@ scale = Vector2( 5.83051, 7.08928 )
 texture = ExtResource( 10 )
 
 [node name="Human Birta Building3" type="KinematicBody2D" parent="."]
-visible = false
 position = Vector2( 490.587, 618.848 )
 scale = Vector2( 0.118, 0.156 )
 __meta__ = {
@@ -267,7 +264,6 @@ scale = Vector2( 5.83051, 7.08928 )
 texture = ExtResource( 10 )
 
 [node name="AI Birta Building" type="KinematicBody2D" parent="."]
-visible = false
 position = Vector2( 1313.78, 451.359 )
 scale = Vector2( 0.118, 0.156 )
 __meta__ = {
@@ -284,7 +280,6 @@ scale = Vector2( 5.83051, 7.08928 )
 texture = ExtResource( 10 )
 
 [node name="AI Birta Building2" type="KinematicBody2D" parent="."]
-visible = false
 position = Vector2( 1233.6, 212.598 )
 scale = Vector2( 0.118, 0.156 )
 __meta__ = {
@@ -301,7 +296,6 @@ scale = Vector2( 5.83051, 7.08928 )
 texture = ExtResource( 10 )
 
 [node name="AI Birta Building3" type="KinematicBody2D" parent="."]
-visible = false
 position = Vector2( 1600.65, 608.157 )
 scale = Vector2( 0.118, 0.156 )
 __meta__ = {
@@ -323,25 +317,21 @@ script = ExtResource( 16 )
 [node name="YSort" type="YSort" parent="Moving_unit"]
 
 [node name="Unit" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
-visible = false
 material = SubResource( 4 )
-position = Vector2( 292.713, 317.681 )
+position = Vector2( 659.763, 486.952 )
 
 [node name="Unit2" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
-visible = false
 material = SubResource( 4 )
-position = Vector2( 293.515, 421.402 )
+position = Vector2( 657.002, 596.018 )
 
 [node name="Unit3" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
-visible = false
 material = SubResource( 5 )
-position = Vector2( 1165.69, 284.251 )
+position = Vector2( 811.112, 485.594 )
 unit_owner = 1
 
 [node name="Unit4" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
-visible = false
 material = SubResource( 5 )
-position = Vector2( 1171.04, 387.595 )
+position = Vector2( 816.462, 597.847 )
 unit_owner = 1
 
 [node name="SelectedDraw" type="Node2D" parent="Moving_unit"]
