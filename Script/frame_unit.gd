@@ -114,5 +114,3 @@ func take_damage(amount) -> bool:
 		
 func get_state():
 	return state_machine.state		
-
-

@@ -51,7 +51,7 @@ __meta__ = {
 }
 
 [node name="Human Main Building" type="KinematicBody2D" parent="."]
-position = Vector2( 128.111, 258.042 )
+position = Vector2( 106.692, 290.868 )
 scale = Vector2( 0.118008, 0.155884 )
 __meta__ = {
 "_edit_group_": true,
@@ -67,7 +67,7 @@ scale = Vector2( 3.96259, 3.72751 )
 texture = ExtResource( 4 )
 
 [node name="AI Main Building" type="KinematicBody2D" parent="."]
-position = Vector2( 1179.89, 387.556 )
+position = Vector2( 1212.65, 437.953 )
 scale = Vector2( 0.118, 0.156 )
 __meta__ = {
 "_edit_group_": true
@@ -116,33 +116,77 @@ __meta__ = {
 
 [node name="AI Timer Node" type="Timer" parent="Currency"]
 
-[node name="HumanBuildingButton" type="Button" parent="Currency"]
-margin_left = 177.237
-margin_top = -7.0
-margin_right = 437.237
-margin_bottom = 49.0
+[node name="HumanBuildingButton5" type="Button" parent="Currency"]
+margin_left = 177.0
+margin_top = -6.0
+margin_right = 374.0
+margin_bottom = 50.0
 custom_colors/font_color = Color( 0.854902, 0.968627, 0.0392157, 1 )
-text = "Buy Human Buildings: 5, 25, 100 Coins"
+text = "Buy Human Building: 5 Coins"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AIBuildingButton" type="Button" parent="Currency"]
-margin_left = 959.666
-margin_top = -4.44048
-margin_right = 1187.67
-margin_bottom = 51.5595
+[node name="HumanBuildingButton25" type="Button" parent="Currency"]
+margin_left = 179.0
+margin_top = 46.9603
+margin_right = 384.0
+margin_bottom = 102.96
 custom_colors/font_color = Color( 0.854902, 0.968627, 0.0392157, 1 )
-text = "Buy AI Buildings: 5, 25, 100 Coins"
+text = "Buy Human Building: 25 Coins"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HumanBuildingButton100" type="Button" parent="Currency"]
+margin_left = 177.74
+margin_top = 103.96
+margin_right = 390.74
+margin_bottom = 159.96
+custom_colors/font_color = Color( 0.854902, 0.968627, 0.0392157, 1 )
+text = "Buy Human Building: 100 Coins"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AIBuildingButton5" type="Button" parent="Currency"]
+margin_left = 960.0
+margin_top = -4.0
+margin_right = 1125.0
+margin_bottom = 52.0
+custom_colors/font_color = Color( 0.854902, 0.968627, 0.0392157, 1 )
+text = "Buy AI Building: 5 Coins"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AIBuildingButton25" type="Button" parent="Currency"]
+margin_left = 960.0
+margin_top = 53.9564
+margin_right = 1125.0
+margin_bottom = 109.956
+custom_colors/font_color = Color( 0.854902, 0.968627, 0.0392157, 1 )
+text = "Buy AI Building: 25 Coins"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AIBuildingButton100" type="Button" parent="Currency"]
+margin_left = 960.0
+margin_top = 113.173
+margin_right = 1141.0
+margin_bottom = 169.173
+custom_colors/font_color = Color( 0.854902, 0.968627, 0.0392157, 1 )
+text = "Buy AI Building: 100 Coins"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HumanUnitButton" type="Button" parent="Currency"]
-margin_left = 444.74
-margin_top = -4.29961
-margin_right = 624.74
-margin_bottom = 47.7004
+margin_left = 385.524
+margin_top = -5.55953
+margin_right = 572.524
+margin_bottom = 46.4405
 custom_colors/font_color = Color( 0.854902, 0.968627, 0.0392157, 1 )
 text = "Buy Human Units: 20 Coins"
 __meta__ = {
@@ -282,7 +326,7 @@ texture = ExtResource( 10 )
 
 [node name="AI Birta Building2" type="KinematicBody2D" parent="."]
 visible = false
-position = Vector2( 1233.6, 212.598 )
+position = Vector2( 1159.26, 187.4 )
 scale = Vector2( 0.118, 0.156 )
 __meta__ = {
 "_edit_group_": true
@@ -358,8 +402,12 @@ zoomMax = 3.5
 [connection signal="pressed" from="Campus Map/BackButton" to="Human Player/Player_1" method="_on_Button_pressed"]
 [connection signal="timeout" from="Currency/Human Timer Node" to="Currency" method="_on_Human_Timer_Node_timeout"]
 [connection signal="timeout" from="Currency/AI Timer Node" to="Currency" method="_on_AI_Timer_Node_timeout"]
-[connection signal="timeout" from="Currency/AI Timer Node" to="Currency/HumanBuildingButton" method="_on_AI_Timer_Node_timeout"]
-[connection signal="pressed" from="Currency/HumanBuildingButton" to="Currency" method="_on_HumanBuildingButton_pressed"]
-[connection signal="pressed" from="Currency/AIBuildingButton" to="Currency" method="_on_AIBuildingButton_pressed"]
+[connection signal="timeout" from="Currency/AI Timer Node" to="Currency/HumanBuildingButton5" method="_on_AI_Timer_Node_timeout"]
+[connection signal="pressed" from="Currency/HumanBuildingButton5" to="Currency" method="_on_HumanBuildingButton5_pressed"]
+[connection signal="pressed" from="Currency/HumanBuildingButton25" to="Currency" method="_on_HumanBuildingButton25_pressed"]
+[connection signal="pressed" from="Currency/HumanBuildingButton100" to="Currency" method="_on_HumanBuildingButton100_pressed"]
+[connection signal="pressed" from="Currency/AIBuildingButton5" to="Currency" method="_on_AIBuildingButton5_pressed"]
+[connection signal="pressed" from="Currency/AIBuildingButton25" to="Currency" method="_on_AIBuildingButton25_pressed"]
+[connection signal="pressed" from="Currency/AIBuildingButton100" to="Currency" method="_on_AIBuildingButton100_pressed"]
 [connection signal="pressed" from="Currency/HumanUnitButton" to="Currency" method="_on_HumanUnitButton_pressed"]
 [connection signal="pressed" from="Currency/AIUnitButton" to="Currency" method="_on_AIUnitButton_pressed"]

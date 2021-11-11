@@ -38,6 +38,3 @@ func _unhandled_input(event):
 	if dragging:
 		if event is InputEventMouseMotion:
 			select_draw.update_status(drag_start, get_global_mouse_position(), dragging)
-			
-
-			
