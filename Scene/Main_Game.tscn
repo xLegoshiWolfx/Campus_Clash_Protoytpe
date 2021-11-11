@@ -351,11 +351,14 @@ position = Vector2( 215.647, 77.932 )
 position = Vector2( 480, 320 )
 current = true
 script = ExtResource( 2 )
+zoomspeed = 10.0
+zoomMin = 0.5
+zoomMax = 3.5
 
 [connection signal="pressed" from="Campus Map/BackButton" to="Human Player/Player_1" method="_on_Button_pressed"]
 [connection signal="timeout" from="Currency/Human Timer Node" to="Currency" method="_on_Human_Timer_Node_timeout"]
-[connection signal="timeout" from="Currency/AI Timer Node" to="Currency/HumanBuildingButton" method="_on_AI_Timer_Node_timeout"]
 [connection signal="timeout" from="Currency/AI Timer Node" to="Currency" method="_on_AI_Timer_Node_timeout"]
+[connection signal="timeout" from="Currency/AI Timer Node" to="Currency/HumanBuildingButton" method="_on_AI_Timer_Node_timeout"]
 [connection signal="pressed" from="Currency/HumanBuildingButton" to="Currency" method="_on_HumanBuildingButton_pressed"]
 [connection signal="pressed" from="Currency/AIBuildingButton" to="Currency" method="_on_AIBuildingButton_pressed"]
 [connection signal="pressed" from="Currency/HumanUnitButton" to="Currency" method="_on_HumanUnitButton_pressed"]
