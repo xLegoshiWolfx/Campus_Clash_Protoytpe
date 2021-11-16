@@ -280,6 +280,7 @@ __meta__ = {
 [node name="BirtaCollision" type="CollisionShape2D" parent="Human Birta Building"]
 position = Vector2( -2286.64, -61.5903 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="BirtaSprite" type="Sprite" parent="Human Birta Building"]
 position = Vector2( -1449.15, 903.846 )
@@ -297,6 +298,7 @@ __meta__ = {
 [node name="BirtaCollision" type="CollisionShape2D" parent="Human Birta Building2"]
 position = Vector2( -2286.64, -61.5903 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="BirtaSprite" type="Sprite" parent="Human Birta Building2"]
 position = Vector2( -1449.15, 903.846 )
@@ -314,6 +316,7 @@ __meta__ = {
 [node name="BirtaCollision" type="CollisionShape2D" parent="Human Birta Building3"]
 position = Vector2( -2286.64, -61.5903 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="BirtaSprite" type="Sprite" parent="Human Birta Building3"]
 position = Vector2( -1449.15, 903.846 )
@@ -331,6 +334,7 @@ __meta__ = {
 [node name="BirtaCollision" type="CollisionShape2D" parent="AI Birta Building"]
 position = Vector2( -2286.64, -61.5903 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="BirtaSprite" type="Sprite" parent="AI Birta Building"]
 position = Vector2( -1449.15, 903.846 )
@@ -348,6 +352,7 @@ __meta__ = {
 [node name="BirtaCollision" type="CollisionShape2D" parent="AI Birta Building2"]
 position = Vector2( -2286.64, -61.5903 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="BirtaSprite" type="Sprite" parent="AI Birta Building2"]
 position = Vector2( -1449.15, 903.846 )
@@ -365,6 +370,7 @@ __meta__ = {
 [node name="BirtaCollision" type="CollisionShape2D" parent="AI Birta Building3"]
 position = Vector2( -2286.64, -61.5903 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="BirtaSprite" type="Sprite" parent="AI Birta Building3"]
 position = Vector2( -1449.15, 903.846 )
@@ -452,8 +458,8 @@ flat = true
 
 [connection signal="pressed" from="Campus Map/BackButton" to="Human Player/Player_1" method="_on_Button_pressed"]
 [connection signal="timeout" from="Currency/Human Timer Node" to="Currency" method="_on_Human_Timer_Node_timeout"]
-[connection signal="timeout" from="Currency/AI Timer Node" to="Currency" method="_on_AI_Timer_Node_timeout"]
 [connection signal="timeout" from="Currency/AI Timer Node" to="Currency/HumanBuildingButton5" method="_on_AI_Timer_Node_timeout"]
+[connection signal="timeout" from="Currency/AI Timer Node" to="Currency" method="_on_AI_Timer_Node_timeout"]
 [connection signal="pressed" from="Currency/HumanBuildingButton5" to="Currency" method="_on_HumanBuildingButton5_pressed"]
 [connection signal="pressed" from="Currency/HumanBuildingButton25" to="Currency" method="_on_HumanBuildingButton25_pressed"]
 [connection signal="pressed" from="Currency/HumanBuildingButton100" to="Currency" method="_on_HumanBuildingButton100_pressed"]
