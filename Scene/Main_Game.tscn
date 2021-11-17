@@ -369,7 +369,6 @@ material = SubResource( 4 )
 position = Vector2( 659.763, 486.952 )
 
 [node name="Unit2" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
-visible = false
 material = SubResource( 4 )
 position = Vector2( 657.002, 596.018 )
 
@@ -401,8 +400,8 @@ zoomMax = 3.5
 
 [connection signal="pressed" from="Campus Map/BackButton" to="Human Player/Player_1" method="_on_Button_pressed"]
 [connection signal="timeout" from="Currency/Human Timer Node" to="Currency" method="_on_Human_Timer_Node_timeout"]
-[connection signal="timeout" from="Currency/AI Timer Node" to="Currency" method="_on_AI_Timer_Node_timeout"]
 [connection signal="timeout" from="Currency/AI Timer Node" to="Currency/HumanBuildingButton5" method="_on_AI_Timer_Node_timeout"]
+[connection signal="timeout" from="Currency/AI Timer Node" to="Currency" method="_on_AI_Timer_Node_timeout"]
 [connection signal="pressed" from="Currency/HumanBuildingButton5" to="Currency" method="_on_HumanBuildingButton5_pressed"]
 [connection signal="pressed" from="Currency/HumanBuildingButton25" to="Currency" method="_on_HumanBuildingButton25_pressed"]
 [connection signal="pressed" from="Currency/HumanBuildingButton100" to="Currency" method="_on_HumanBuildingButton100_pressed"]
