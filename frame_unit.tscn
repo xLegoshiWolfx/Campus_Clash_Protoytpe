@@ -20,6 +20,7 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+disabled = true
 
 [node name="Selected" type="Sprite" parent="."]
 visible = false
@@ -39,6 +40,7 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisionRange"]
 shape = SubResource( 3 )
+disabled = true
 
 [connection signal="animation_finished" from="AnimatedSprite" to="UnitSM" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="timeout" from="StopTimer" to="UnitSM" method="_on_StopTimer_timeout"]

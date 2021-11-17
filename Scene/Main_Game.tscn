@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Tile Map/Tile_map_texture.tres" type="TileSet" id=1]
 [ext_resource path="res://Script/CameraMovement.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Scene/Player_1.gd" type="Script" id=8]
 [ext_resource path="res://Scene/AI Timer Label.gd" type="Script" id=9]
 [ext_resource path="res://PNG/Birta_Building.png" type="Texture" id=10]
+[ext_resource path="res://Fonts/game-battles-font/GameBattlesRegular-RjXo.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Scene/Popup.gd" type="Script" id=13]
 [ext_resource path="res://frame_unit.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Script/Game.gd" type="Script" id=16]
 [ext_resource path="res://Script/SelectedDraw.gd" type="Script" id=18]
@@ -26,6 +28,17 @@ extents = Vector2( 724.616, 748.158 )
 [sub_resource type="ShaderMaterial" id=4]
 
 [sub_resource type="CanvasItemMaterial" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 11 )
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends Button
+
+# Pause the current scene
+
+
+"
 
 [node name="TileMap" type="Node2D"]
 
@@ -267,6 +280,7 @@ __meta__ = {
 [node name="BirtaCollision" type="CollisionShape2D" parent="Human Birta Building"]
 position = Vector2( -2286.64, -61.5903 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="BirtaSprite" type="Sprite" parent="Human Birta Building"]
 position = Vector2( -1449.15, 903.846 )
@@ -284,6 +298,7 @@ __meta__ = {
 [node name="BirtaCollision" type="CollisionShape2D" parent="Human Birta Building2"]
 position = Vector2( -2286.64, -61.5903 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="BirtaSprite" type="Sprite" parent="Human Birta Building2"]
 position = Vector2( -1449.15, 903.846 )
@@ -301,6 +316,7 @@ __meta__ = {
 [node name="BirtaCollision" type="CollisionShape2D" parent="Human Birta Building3"]
 position = Vector2( -2286.64, -61.5903 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="BirtaSprite" type="Sprite" parent="Human Birta Building3"]
 position = Vector2( -1449.15, 903.846 )
@@ -318,6 +334,7 @@ __meta__ = {
 [node name="BirtaCollision" type="CollisionShape2D" parent="AI Birta Building"]
 position = Vector2( -2286.64, -61.5903 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="BirtaSprite" type="Sprite" parent="AI Birta Building"]
 position = Vector2( -1449.15, 903.846 )
@@ -335,6 +352,7 @@ __meta__ = {
 [node name="BirtaCollision" type="CollisionShape2D" parent="AI Birta Building2"]
 position = Vector2( -2286.64, -61.5903 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="BirtaSprite" type="Sprite" parent="AI Birta Building2"]
 position = Vector2( -1449.15, 903.846 )
@@ -352,6 +370,7 @@ __meta__ = {
 [node name="BirtaCollision" type="CollisionShape2D" parent="AI Birta Building3"]
 position = Vector2( -2286.64, -61.5903 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="BirtaSprite" type="Sprite" parent="AI Birta Building3"]
 position = Vector2( -1449.15, 903.846 )
@@ -398,6 +417,44 @@ zoomspeed = 10.0
 zoomMin = 0.5
 zoomMax = 3.5
 
+[node name="Pause" type="Button" parent="."]
+margin_left = 17.4155
+margin_top = 85.8335
+margin_right = 149.415
+margin_bottom = 156.833
+custom_fonts/font = SubResource( 6 )
+text = "Pause"
+script = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="Popup" parent="."]
+pause_mode = 2
+margin_left = -101.29
+margin_top = -40.5795
+margin_right = 1881.71
+margin_bottom = 1043.42
+script = ExtResource( 13 )
+
+[node name="Resume" type="Button" parent="Popup"]
+margin_left = 551.984
+margin_top = 503.084
+margin_right = 986.984
+margin_bottom = 587.084
+custom_fonts/font = ExtResource( 6 )
+text = "Resume"
+flat = true
+
+[node name="Back" type="Button" parent="Popup"]
+margin_left = 644.654
+margin_top = 585.844
+margin_right = 929.654
+margin_bottom = 669.844
+custom_fonts/font = ExtResource( 6 )
+text = "Back"
+flat = true
+
 [connection signal="pressed" from="Campus Map/BackButton" to="Human Player/Player_1" method="_on_Button_pressed"]
 [connection signal="timeout" from="Currency/Human Timer Node" to="Currency" method="_on_Human_Timer_Node_timeout"]
 [connection signal="timeout" from="Currency/AI Timer Node" to="Currency/HumanBuildingButton5" method="_on_AI_Timer_Node_timeout"]
@@ -410,3 +467,6 @@ zoomMax = 3.5
 [connection signal="pressed" from="Currency/AIBuildingButton100" to="Currency" method="_on_AIBuildingButton100_pressed"]
 [connection signal="pressed" from="Currency/HumanUnitButton" to="Currency" method="_on_HumanUnitButton_pressed"]
 [connection signal="pressed" from="Currency/AIUnitButton" to="Currency" method="_on_AIUnitButton_pressed"]
+[connection signal="pressed" from="Pause" to="Popup" method="_on_Pause_pressed"]
+[connection signal="pressed" from="Popup/Resume" to="Popup" method="_on_Resume_pressed"]
+[connection signal="pressed" from="Popup/Back" to="Popup" method="_on_Back_pressed"]
