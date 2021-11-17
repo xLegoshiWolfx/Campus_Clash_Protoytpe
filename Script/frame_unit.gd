@@ -3,6 +3,7 @@ class_name Unit
 
 #Allowing us to have two types of unit
 export var unit_owner := 0
+export var unit_health = 100
 
 # take control of the select and deselected function
 var selected = false
