@@ -31,14 +31,15 @@ onready var _AI_unit_collision = get_node("/root/TileMap/Moving_unit/YSort/Unit3
 onready var _AI_unit_vision_collision = get_node("/root/TileMap/Moving_unit/YSort/Unit3/VisionRange/CollisionShape2D")
 onready var _AI_unit_collision2 = get_node("/root/TileMap/Moving_unit/YSort/Unit4/CollisionShape2D")
 onready var _AI_unit_vision_collision2 = get_node("/root/TileMap/Moving_unit/YSort/Unit4/VisionRange/CollisionShape2D")
-onready var _human_win_message = get_node("/root/TileMap/Currency/Human Win")
-onready var _AI_win_message = get_node("/root/TileMap/Currency/AI Win")
+onready var _human_win_message = get_node("/root/TileMap/Camera/Camera2D/Currency/Human Win")
+onready var _AI_win_message = get_node("/root/TileMap/Camera/Camera2D/Currency/AI Win")
 
 func _ready():
 	_human_timer.set_wait_time(1)
 	_human_timer.start()
 	_AI_timer.set_wait_time(1)
 	_AI_timer.start()
+	
 
 
 # Checks every second to see if a player has won. Prints a win message
@@ -50,6 +51,7 @@ func _process(delta):
 			human_building_mult = 0
 			AI_building_mult = 0
 			_human_win_message.visible = true
+			
 	if (_AI_Birta_Building5.visible == true 
 		and _AI_Birta_Building25.visible == true
 		and _AI_Birta_Building100.visible == true):
