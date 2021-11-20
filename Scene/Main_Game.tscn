@@ -1,9 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Tile Map/Isometric_Tile_map.tres" type="TileSet" id=1]
 [ext_resource path="res://Script/CameraMovement.gd" type="Script" id=2]
+[ext_resource path="res://Script/Health Bar.gd" type="Script" id=3]
 [ext_resource path="res://PNG/Chloe_Tower.png" type="Texture" id=4]
 [ext_resource path="res://Scene/Currency.gd" type="Script" id=5]
+[ext_resource path="res://PNG/HealthBars/barHorizontal_green.png" type="Texture" id=6]
 [ext_resource path="res://Scene/Human Timer.gd" type="Script" id=7]
 [ext_resource path="res://Scene/AI Timer Label.gd" type="Script" id=9]
 [ext_resource path="res://PNG/Birta_Building.png" type="Texture" id=10]
@@ -19,6 +21,8 @@ extents = Vector2( 1349.06, 1688.78 )
 extents = Vector2( 724.616, 748.158 )
 
 [sub_resource type="ShaderMaterial" id=3]
+
+[sub_resource type="ImageTexture" id=5]
 
 [sub_resource type="CanvasItemMaterial" id=4]
 
@@ -182,10 +186,34 @@ visible = false
 material = SubResource( 3 )
 position = Vector2( 462.206, 527.243 )
 
+[node name="Health Bar" type="Node2D" parent="Moving_unit/YSort/Unit"]
+script = ExtResource( 3 )
+
+[node name="HealthBar" type="TextureProgress" parent="Moving_unit/YSort/Unit/Health Bar"]
+margin_left = -100.212
+margin_top = -40.5191
+margin_right = 99.7878
+margin_bottom = -15.5191
+value = 100.0
+texture_under = SubResource( 5 )
+texture_progress = ExtResource( 6 )
+
 [node name="Unit2" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
 visible = false
 material = SubResource( 3 )
 position = Vector2( 464.21, 605.549 )
+
+[node name="Health Bar" type="Node2D" parent="Moving_unit/YSort/Unit2"]
+script = ExtResource( 3 )
+
+[node name="HealthBar" type="TextureProgress" parent="Moving_unit/YSort/Unit2/Health Bar"]
+margin_left = -100.212
+margin_top = -40.5191
+margin_right = 99.7878
+margin_bottom = -15.5191
+value = 100.0
+texture_under = SubResource( 5 )
+texture_progress = ExtResource( 6 )
 
 [node name="Unit3" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
 visible = false
@@ -193,11 +221,35 @@ material = SubResource( 4 )
 position = Vector2( 930.686, 282.404 )
 unit_owner = 1
 
+[node name="Health Bar" type="Node2D" parent="Moving_unit/YSort/Unit3"]
+script = ExtResource( 3 )
+
+[node name="HealthBar" type="TextureProgress" parent="Moving_unit/YSort/Unit3/Health Bar"]
+margin_left = -100.212
+margin_top = -40.5191
+margin_right = 99.7878
+margin_bottom = -15.5191
+value = 100.0
+texture_under = SubResource( 5 )
+texture_progress = ExtResource( 6 )
+
 [node name="Unit4" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
 visible = false
 material = SubResource( 4 )
 position = Vector2( 943.835, 361.298 )
 unit_owner = 1
+
+[node name="Health Bar" type="Node2D" parent="Moving_unit/YSort/Unit4"]
+script = ExtResource( 3 )
+
+[node name="HealthBar" type="TextureProgress" parent="Moving_unit/YSort/Unit4/Health Bar"]
+margin_left = -100.212
+margin_top = -40.5191
+margin_right = 99.7878
+margin_bottom = -15.5191
+value = 100.0
+texture_under = SubResource( 5 )
+texture_progress = ExtResource( 6 )
 
 [node name="SelectedDraw" type="Node2D" parent="Moving_unit"]
 script = ExtResource( 18 )
@@ -371,8 +423,8 @@ __meta__ = {
 }
 
 [connection signal="timeout" from="Camera/Camera2D/Currency/Human Timer Node" to="Camera/Camera2D/Currency" method="_on_Human_Timer_Node_timeout"]
-[connection signal="timeout" from="Camera/Camera2D/Currency/AI Timer Node" to="Camera/Camera2D/Currency" method="_on_AI_Timer_Node_timeout"]
 [connection signal="timeout" from="Camera/Camera2D/Currency/AI Timer Node" to="Camera/Camera2D/Currency/HumanBuildingButton5" method="_on_AI_Timer_Node_timeout"]
+[connection signal="timeout" from="Camera/Camera2D/Currency/AI Timer Node" to="Camera/Camera2D/Currency" method="_on_AI_Timer_Node_timeout"]
 [connection signal="pressed" from="Camera/Camera2D/Currency/HumanBuildingButton5" to="Camera/Camera2D/Currency" method="_on_HumanBuildingButton5_pressed"]
 [connection signal="pressed" from="Camera/Camera2D/Currency/HumanBuildingButton25" to="Camera/Camera2D/Currency" method="_on_HumanBuildingButton25_pressed"]
 [connection signal="pressed" from="Camera/Camera2D/Currency/HumanBuildingButton100" to="Camera/Camera2D/Currency" method="_on_HumanBuildingButton100_pressed"]
