@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Tile Map/Isometric_Tile_map.tres" type="TileSet" id=1]
 [ext_resource path="res://Script/CameraMovement.gd" type="Script" id=2]
@@ -7,9 +7,13 @@
 [ext_resource path="res://Scene/Currency.gd" type="Script" id=5]
 [ext_resource path="res://PNG/HealthBars/barHorizontal_green.png" type="Texture" id=6]
 [ext_resource path="res://Scene/Human Timer.gd" type="Script" id=7]
+[ext_resource path="res://Script/Human Birta Building1.gd" type="Script" id=8]
 [ext_resource path="res://Scene/AI Timer Label.gd" type="Script" id=9]
 [ext_resource path="res://PNG/Birta_Building.png" type="Texture" id=10]
+[ext_resource path="res://Script/Human Birta Building2.gd" type="Script" id=11]
 [ext_resource path="res://Scene/Pause_Resume.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Script/Building Health Bar.gd" type="Script" id=13]
+[ext_resource path="res://Script/Human Birta Building3.gd" type="Script" id=14]
 [ext_resource path="res://frame_unit.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Script/Game.gd" type="Script" id=16]
 [ext_resource path="res://Script/SelectedDraw.gd" type="Script" id=18]
@@ -22,9 +26,7 @@ extents = Vector2( 724.616, 748.158 )
 
 [sub_resource type="ShaderMaterial" id=3]
 
-[sub_resource type="ImageTexture" id=5]
-
-[sub_resource type="CanvasItemMaterial" id=4]
+[sub_resource type="CanvasItemMaterial" id=5]
 
 [node name="TileMap" type="Node2D"]
 
@@ -69,9 +71,9 @@ scale = Vector2( 3.83038, 3.54617 )
 texture = ExtResource( 4 )
 
 [node name="Human Birta Building" type="KinematicBody2D" parent="."]
-visible = false
 position = Vector2( 306.13, 49.7428 )
 scale = Vector2( 0.118, 0.156 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -86,10 +88,26 @@ position = Vector2( -1449.15, 903.846 )
 scale = Vector2( 5.83051, 7.08928 )
 texture = ExtResource( 10 )
 
+[node name="Building Health Bar" type="Node2D" parent="Human Birta Building"]
+script = ExtResource( 13 )
+
+[node name="BHealthBar" type="TextureProgress" parent="Human Birta Building/Building Health Bar"]
+margin_left = -3116.92
+margin_top = -1064.04
+margin_right = -1478.92
+margin_bottom = -857.044
+value = 100.0
+texture_progress = ExtResource( 6 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Human Birta Building2" type="KinematicBody2D" parent="."]
 visible = false
 position = Vector2( 126.958, 466.536 )
 scale = Vector2( 0.118, 0.156 )
+script = ExtResource( 11 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -104,10 +122,25 @@ position = Vector2( -1449.15, 903.846 )
 scale = Vector2( 5.83051, 7.08928 )
 texture = ExtResource( 10 )
 
+[node name="Building Health Bar" type="Node2D" parent="Human Birta Building2"]
+script = ExtResource( 13 )
+
+[node name="BHealthBar" type="TextureProgress" parent="Human Birta Building2/Building Health Bar"]
+margin_left = -3116.92
+margin_top = -1064.04
+margin_right = -1478.92
+margin_bottom = -857.044
+value = 100.0
+texture_progress = ExtResource( 6 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Human Birta Building3" type="KinematicBody2D" parent="."]
-visible = false
 position = Vector2( 322.723, 840.53 )
 scale = Vector2( 0.118, 0.156 )
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -121,6 +154,21 @@ disabled = true
 position = Vector2( -1449.15, 903.846 )
 scale = Vector2( 5.83051, 7.08928 )
 texture = ExtResource( 10 )
+
+[node name="Building Health Bar" type="Node2D" parent="Human Birta Building3"]
+script = ExtResource( 13 )
+
+[node name="BHealthBar" type="TextureProgress" parent="Human Birta Building3/Building Health Bar"]
+margin_left = -3116.92
+margin_top = -1064.04
+margin_right = -1478.92
+margin_bottom = -857.044
+value = 100.0
+texture_progress = ExtResource( 6 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AI Birta Building" type="KinematicBody2D" parent="."]
 visible = false
@@ -195,8 +243,11 @@ margin_top = -40.5191
 margin_right = 99.7878
 margin_bottom = -15.5191
 value = 100.0
-texture_under = SubResource( 5 )
 texture_progress = ExtResource( 6 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Unit2" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
 visible = false
@@ -212,12 +263,12 @@ margin_top = -40.5191
 margin_right = 99.7878
 margin_bottom = -15.5191
 value = 100.0
-texture_under = SubResource( 5 )
 texture_progress = ExtResource( 6 )
+nine_patch_stretch = true
 
 [node name="Unit3" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
 visible = false
-material = SubResource( 4 )
+material = SubResource( 5 )
 position = Vector2( 930.686, 282.404 )
 unit_owner = 1
 
@@ -230,12 +281,12 @@ margin_top = -40.5191
 margin_right = 99.7878
 margin_bottom = -15.5191
 value = 100.0
-texture_under = SubResource( 5 )
 texture_progress = ExtResource( 6 )
+nine_patch_stretch = true
 
 [node name="Unit4" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
 visible = false
-material = SubResource( 4 )
+material = SubResource( 5 )
 position = Vector2( 943.835, 361.298 )
 unit_owner = 1
 
@@ -248,8 +299,8 @@ margin_top = -40.5191
 margin_right = 99.7878
 margin_bottom = -15.5191
 value = 100.0
-texture_under = SubResource( 5 )
 texture_progress = ExtResource( 6 )
+nine_patch_stretch = true
 
 [node name="SelectedDraw" type="Node2D" parent="Moving_unit"]
 script = ExtResource( 18 )
