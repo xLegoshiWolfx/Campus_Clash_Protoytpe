@@ -1,12 +1,12 @@
 extends Node2D
 
 # Button to change scene to the main game
-func _on_Button_pressed():
+func _on_Start_game_button_pressed():
 	get_tree().change_scene("res://Scene/Main_Game.tscn")
 
 # Button to change to the menu option 
-func _on_Button2_pressed():
-	get_tree().change_scene("res://Scene/Second_Scene.tscn")
+func _on_Menu_button_pressed():
+	get_tree().change_scene("res://Scene/Instructions.tscn")
 
 # Button to quit and terminate the game
 func _on_Quit_button_pressed():
