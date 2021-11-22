@@ -404,14 +404,16 @@ zoomspeed = 10.0
 zoomMin = 0.5
 zoomMax = 3.5
 
-[node name="Pause_Button" parent="Camera/Camera2D" instance=ExtResource( 12 )]
-position = Vector2( -695.647, -397.932 )
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Currency" type="Node2D" parent="Camera/Camera2D"]
-position = Vector2( -670.302, -395.008 )
+[node name="Pause_Button" parent="CanvasLayer" instance=ExtResource( 12 )]
+position = Vector2( 101.934, 56.851 )
+
+[node name="Currency" type="Node2D" parent="CanvasLayer"]
+position = Vector2( 127.279, 59.775 )
 script = ExtResource( 5 )
 
-[node name="Human Timer Label" type="Label" parent="Camera/Camera2D/Currency"]
+[node name="Human Timer Label" type="Label" parent="CanvasLayer/Currency"]
 margin_left = -12.5708
 margin_top = -1.1132
 margin_right = 111.429
@@ -424,9 +426,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Human Timer Node" type="Timer" parent="Camera/Camera2D/Currency"]
+[node name="Human Timer Node" type="Timer" parent="CanvasLayer/Currency"]
 
-[node name="AI Timer Label" type="Label" parent="Camera/Camera2D/Currency"]
+[node name="AI Timer Label" type="Label" parent="CanvasLayer/Currency"]
 margin_left = 1205.09
 margin_top = 5.0
 margin_right = 1328.09
@@ -439,9 +441,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AI Timer Node" type="Timer" parent="Camera/Camera2D/Currency"]
+[node name="AI Timer Node" type="Timer" parent="CanvasLayer/Currency"]
 
-[node name="HumanBuildingButton5" type="Button" parent="Camera/Camera2D/Currency"]
+[node name="HumanBuildingButton5" type="Button" parent="CanvasLayer/Currency"]
 margin_left = 177.0
 margin_top = -6.0
 margin_right = 374.0
@@ -452,7 +454,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HumanBuildingButton25" type="Button" parent="Camera/Camera2D/Currency"]
+[node name="HumanBuildingButton25" type="Button" parent="CanvasLayer/Currency"]
 margin_left = 179.0
 margin_top = 46.9603
 margin_right = 384.0
@@ -463,7 +465,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HumanBuildingButton100" type="Button" parent="Camera/Camera2D/Currency"]
+[node name="HumanBuildingButton100" type="Button" parent="CanvasLayer/Currency"]
 margin_left = 177.74
 margin_top = 103.96
 margin_right = 390.74
@@ -474,7 +476,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AIBuildingButton5" type="Button" parent="Camera/Camera2D/Currency"]
+[node name="AIBuildingButton5" type="Button" parent="CanvasLayer/Currency"]
 margin_left = 960.0
 margin_top = -4.0
 margin_right = 1125.0
@@ -485,7 +487,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AIBuildingButton25" type="Button" parent="Camera/Camera2D/Currency"]
+[node name="AIBuildingButton25" type="Button" parent="CanvasLayer/Currency"]
 margin_left = 960.0
 margin_top = 53.9564
 margin_right = 1125.0
@@ -496,7 +498,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AIBuildingButton100" type="Button" parent="Camera/Camera2D/Currency"]
+[node name="AIBuildingButton100" type="Button" parent="CanvasLayer/Currency"]
 margin_left = 960.0
 margin_top = 113.173
 margin_right = 1141.0
@@ -507,7 +509,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HumanUnitButton" type="Button" parent="Camera/Camera2D/Currency"]
+[node name="HumanUnitButton" type="Button" parent="CanvasLayer/Currency"]
 margin_left = 385.524
 margin_top = -5.55953
 margin_right = 572.524
@@ -518,7 +520,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AIUnitButton" type="Button" parent="Camera/Camera2D/Currency"]
+[node name="AIUnitButton" type="Button" parent="CanvasLayer/Currency"]
 margin_left = 793.626
 margin_top = -1.22024
 margin_right = 948.626
@@ -529,7 +531,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Human Win" type="Label" parent="Camera/Camera2D/Currency"]
+[node name="Human Win" type="Label" parent="CanvasLayer/Currency"]
 visible = false
 margin_left = 539.439
 margin_top = 596.928
@@ -545,7 +547,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AI Win" type="Label" parent="Camera/Camera2D/Currency"]
+[node name="AI Win" type="Label" parent="CanvasLayer/Currency"]
 visible = false
 margin_left = 528.748
 margin_top = 598.709
@@ -561,14 +563,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="timeout" from="Camera/Camera2D/Currency/Human Timer Node" to="Camera/Camera2D/Currency" method="_on_Human_Timer_Node_timeout"]
-[connection signal="timeout" from="Camera/Camera2D/Currency/AI Timer Node" to="Camera/Camera2D/Currency" method="_on_AI_Timer_Node_timeout"]
-[connection signal="timeout" from="Camera/Camera2D/Currency/AI Timer Node" to="Camera/Camera2D/Currency/HumanBuildingButton5" method="_on_AI_Timer_Node_timeout"]
-[connection signal="pressed" from="Camera/Camera2D/Currency/HumanBuildingButton5" to="Camera/Camera2D/Currency" method="_on_HumanBuildingButton5_pressed"]
-[connection signal="pressed" from="Camera/Camera2D/Currency/HumanBuildingButton25" to="Camera/Camera2D/Currency" method="_on_HumanBuildingButton25_pressed"]
-[connection signal="pressed" from="Camera/Camera2D/Currency/HumanBuildingButton100" to="Camera/Camera2D/Currency" method="_on_HumanBuildingButton100_pressed"]
-[connection signal="pressed" from="Camera/Camera2D/Currency/AIBuildingButton5" to="Camera/Camera2D/Currency" method="_on_AIBuildingButton5_pressed"]
-[connection signal="pressed" from="Camera/Camera2D/Currency/AIBuildingButton25" to="Camera/Camera2D/Currency" method="_on_AIBuildingButton25_pressed"]
-[connection signal="pressed" from="Camera/Camera2D/Currency/AIBuildingButton100" to="Camera/Camera2D/Currency" method="_on_AIBuildingButton100_pressed"]
-[connection signal="pressed" from="Camera/Camera2D/Currency/HumanUnitButton" to="Camera/Camera2D/Currency" method="_on_HumanUnitButton_pressed"]
-[connection signal="pressed" from="Camera/Camera2D/Currency/AIUnitButton" to="Camera/Camera2D/Currency" method="_on_AIUnitButton_pressed"]
+[connection signal="timeout" from="CanvasLayer/Currency/Human Timer Node" to="CanvasLayer/Currency" method="_on_Human_Timer_Node_timeout"]
+[connection signal="timeout" from="CanvasLayer/Currency/AI Timer Node" to="CanvasLayer/Currency" method="_on_AI_Timer_Node_timeout"]
+[connection signal="timeout" from="CanvasLayer/Currency/AI Timer Node" to="CanvasLayer/Currency/HumanBuildingButton5" method="_on_AI_Timer_Node_timeout"]
+[connection signal="pressed" from="CanvasLayer/Currency/HumanBuildingButton5" to="CanvasLayer/Currency" method="_on_HumanBuildingButton5_pressed"]
+[connection signal="pressed" from="CanvasLayer/Currency/HumanBuildingButton25" to="CanvasLayer/Currency" method="_on_HumanBuildingButton25_pressed"]
+[connection signal="pressed" from="CanvasLayer/Currency/HumanBuildingButton100" to="CanvasLayer/Currency" method="_on_HumanBuildingButton100_pressed"]
+[connection signal="pressed" from="CanvasLayer/Currency/AIBuildingButton5" to="CanvasLayer/Currency" method="_on_AIBuildingButton5_pressed"]
+[connection signal="pressed" from="CanvasLayer/Currency/AIBuildingButton25" to="CanvasLayer/Currency" method="_on_AIBuildingButton25_pressed"]
+[connection signal="pressed" from="CanvasLayer/Currency/AIBuildingButton100" to="CanvasLayer/Currency" method="_on_AIBuildingButton100_pressed"]
+[connection signal="pressed" from="CanvasLayer/Currency/HumanUnitButton" to="CanvasLayer/Currency" method="_on_HumanUnitButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Currency/AIUnitButton" to="CanvasLayer/Currency" method="_on_AIUnitButton_pressed"]

@@ -31,8 +31,8 @@ onready var _AI_unit_collision = get_node("/root/TileMap/Moving_unit/YSort/Unit3
 onready var _AI_unit_vision_collision = get_node("/root/TileMap/Moving_unit/YSort/Unit3/VisionRange/CollisionShape2D")
 onready var _AI_unit_collision2 = get_node("/root/TileMap/Moving_unit/YSort/Unit4/CollisionShape2D")
 onready var _AI_unit_vision_collision2 = get_node("/root/TileMap/Moving_unit/YSort/Unit4/VisionRange/CollisionShape2D")
-onready var _human_win_message = get_node("/root/TileMap/Camera/Camera2D/Currency/Human Win")
-onready var _AI_win_message = get_node("/root/TileMap/Camera/Camera2D/Currency/AI Win")
+onready var _human_win_message = get_node("/root/TileMap/CanvasLayer/Currency/Human Win")
+onready var _AI_win_message = get_node("/root/TileMap/CanvasLayer/Currency/AI Win")
 
 func _ready():
 	_human_timer.set_wait_time(1)
