@@ -38,13 +38,34 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 243.341
-margin_top = 323.455
-margin_right = 1245.34
-margin_bottom = 425.455
+margin_left = 13.0
+margin_top = 137.0
+margin_right = 1542.0
+margin_bottom = 869.0
 custom_fonts/font = SubResource( 1 )
 text = "Welcome to Campus Clash. 
-The most exciting game you will ever play. 
+
+You are a player that is trying to defend your campus by a evil
+AI. YOu will try to complete your campus by making buildings and
+hiring units to defend your campus and attack the invading AI.
+
+There are two objectives to win the game:
+
+The first objective is to complete your campus by building each
+building at least once with campus points
+
+The second objective is to shut down the opponent's center base
+with units.
+
+You must fulfill one of these objectives to win. The AI will try to
+win by completing these objectives as well. 
+
+Can you beat the AI and complete your campus? 
+
+01001001 00100000 
+01100100 01101111 01110101 01100010 01110100 00100000 01101001 01110100
+
+
 "
 __meta__ = {
 "_edit_use_anchors_": false
