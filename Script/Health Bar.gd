@@ -8,7 +8,7 @@ var bar_yellow = preload("res://PNG/HealthBars/barHorizontal_yellow.png")
 onready var healthbar = $HealthBar
 
 func _ready():
-	hide()
+#	hide()
 	if get_parent() and get_parent().get("max_health"):
 		healthbar.max_value = get_parent().max_health
 	update_healthbar()
