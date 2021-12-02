@@ -568,8 +568,8 @@ __meta__ = {
 }
 
 [connection signal="timeout" from="CanvasLayer/Currency/Human Timer Node" to="CanvasLayer/Currency" method="_on_Human_Timer_Node_timeout"]
-[connection signal="timeout" from="CanvasLayer/Currency/AI Timer Node" to="CanvasLayer/Currency/HumanBuildingButton5" method="_on_AI_Timer_Node_timeout"]
 [connection signal="timeout" from="CanvasLayer/Currency/AI Timer Node" to="CanvasLayer/Currency" method="_on_AI_Timer_Node_timeout"]
+[connection signal="timeout" from="CanvasLayer/Currency/AI Timer Node" to="CanvasLayer/Currency/HumanBuildingButton5" method="_on_AI_Timer_Node_timeout"]
 [connection signal="pressed" from="CanvasLayer/Currency/HumanBuildingButton5" to="CanvasLayer/Currency" method="_on_HumanBuildingButton5_pressed"]
 [connection signal="pressed" from="CanvasLayer/Currency/HumanBuildingButton25" to="CanvasLayer/Currency" method="_on_HumanBuildingButton25_pressed"]
 [connection signal="pressed" from="CanvasLayer/Currency/HumanBuildingButton100" to="CanvasLayer/Currency" method="_on_HumanBuildingButton100_pressed"]
