@@ -43,6 +43,7 @@ margin_top = 137.0
 margin_right = 1542.0
 margin_bottom = 869.0
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Welcome to Campus Clash. 
 
 You are a player that is trying to defend your campus by a evil

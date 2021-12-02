@@ -361,6 +361,7 @@ position = Vector2( 930.686, 282.404 )
 unit_owner = 1
 
 [node name="Health Bar" type="Node2D" parent="Moving_unit/YSort/Unit3"]
+position = Vector2( -2.5636, 0 )
 script = ExtResource( 3 )
 
 [node name="HealthBar" type="TextureProgress" parent="Moving_unit/YSort/Unit3/Health Bar"]
@@ -371,6 +372,9 @@ margin_bottom = -15.5191
 value = 100.0
 texture_progress = ExtResource( 6 )
 nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Unit4" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
 visible = false
