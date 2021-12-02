@@ -23,7 +23,7 @@ var attack_range = 25
 var attack_target = null
 var possible_targets = []
 var health = 10
-var damage_amount = 2
+var damage_amount = 5
 
 var facing_forward = true
 
