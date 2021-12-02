@@ -1,12 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Script/Main_Menu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Font_Designs/Menu_font_styles.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Background_video/video_2.ogv" type="VideoStream" id=3]
-[ext_resource path="res://Scene/VideoPlayer.gd" type="Script" id=4]
+[ext_resource path="res://PNG/modern-futuristic-sci-fi-background.jpg" type="Texture" id=3]
+[ext_resource path="res://Fonts/GameBattlesRegular-RjXo.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://PNG/Volume_icon.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/Font_Designs/Notification_font_style.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Script/Popup.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=3]
+size = 50
+font_data = ExtResource( 4 )
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Button
@@ -20,14 +24,12 @@ script/source = "extends Button
 [node name="Main_Menu" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="VideoPlayer" type="VideoPlayer" parent="."]
-margin_left = -4.24841
-margin_top = 1.21468
-margin_right = 1609.75
-margin_bottom = 906.215
-stream = ExtResource( 3 )
-autoplay = true
-script = ExtResource( 4 )
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -1.0
+margin_right = 1586.0
+margin_bottom = 904.0
+texture = ExtResource( 3 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -38,10 +40,10 @@ margin_top = 247.3
 margin_right = 1121.0
 margin_bottom = 331.3
 rect_rotation = 0.182242
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.0509804, 0.223529, 0.592157, 1 )
-custom_colors/font_color_hover = Color( 0.286275, 0.290196, 0.294118, 1 )
-custom_colors/font_color_pressed = Color( 0.105882, 0.180392, 0.415686, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.862745, 0.862745, 0.862745, 1 )
 text = "Start Game"
 flat = true
 __meta__ = {
@@ -55,9 +57,9 @@ margin_right = 1152.37
 margin_bottom = 428.0
 rect_rotation = 0.277264
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.0509804, 0.223529, 0.592157, 1 )
-custom_colors/font_color_hover = Color( 0.286275, 0.290196, 0.294118, 1 )
-custom_colors/font_color_pressed = Color( 0.105882, 0.180392, 0.415686, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.862745, 0.862745, 0.862745, 1 )
 text = "Instructions"
 flat = true
 __meta__ = {
@@ -71,9 +73,9 @@ margin_right = 822.0
 margin_bottom = 518.0
 rect_rotation = 0.277264
 custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.0509804, 0.223529, 0.592157, 1 )
-custom_colors/font_color_hover = Color( 0.286275, 0.290196, 0.294118, 1 )
-custom_colors/font_color_pressed = Color( 0.105882, 0.180392, 0.415686, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.862745, 0.862745, 0.862745, 1 )
+custom_colors/font_color_pressed = Color( 0.862745, 0.862745, 0.862745, 1 )
 text = "Quit"
 flat = true
 __meta__ = {
@@ -133,7 +135,6 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[connection signal="ready" from="VideoPlayer" to="." method="_on_VideoPlayer_ready"]
 [connection signal="pressed" from="Start_game_button" to="." method="_on_Start_game_button_pressed"]
 [connection signal="pressed" from="Menu_button" to="." method="_on_Menu_button_pressed"]
 [connection signal="pressed" from="Quit_button" to="." method="_on_Quit_button_pressed"]

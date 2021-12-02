@@ -13,10 +13,10 @@ font_data = ExtResource( 4 )
 script = ExtResource( 3 )
 
 [node name="Pause Button" type="Button" parent="."]
-margin_left = -17.2645
-margin_top = 88.7806
-margin_right = 200.736
-margin_bottom = 144.781
+margin_left = 8.4064
+margin_top = 100.968
+margin_right = 226.407
+margin_bottom = 156.968
 custom_fonts/font = SubResource( 1 )
 text = "Pause"
 flat = true
@@ -34,9 +34,9 @@ script = ExtResource( 2 )
 anchor_top = -0.0412109
 anchor_right = 4.2
 anchor_bottom = 0.233789
-margin_left = 696.0
+margin_left = 592.152
 margin_top = 337.648
-margin_right = 963.0
+margin_right = 859.152
 margin_bottom = 410.648
 custom_fonts/font = ExtResource( 1 )
 text = "Resume"
@@ -46,10 +46,10 @@ __meta__ = {
 }
 
 [node name="Restart Game Button" type="Button" parent="Popup"]
-margin_left = 678.716
-margin_top = 440.483
-margin_right = 1199.72
-margin_bottom = 524.483
+margin_left = 564.977
+margin_top = 432.241
+margin_right = 1085.98
+margin_bottom = 516.241
 custom_fonts/font = ExtResource( 1 )
 text = "Restart "
 flat = true
@@ -58,9 +58,9 @@ __meta__ = {
 }
 
 [node name="Main Menu Button" type="Button" parent="Popup"]
-margin_left = 649.606
+margin_left = 534.219
 margin_top = 535.89
-margin_right = 1220.61
+margin_right = 1105.22
 margin_bottom = 619.89
 custom_fonts/font = ExtResource( 1 )
 text = "Main Menu"
@@ -70,9 +70,9 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="Pause Button" to="Popup" method="_on_Pause_Button_pressed"]
-[connection signal="pressed" from="Popup/Resume Button" to="." method="_on_Resume_Button_pressed"]
 [connection signal="pressed" from="Popup/Resume Button" to="Popup" method="_on_Resume_Button_pressed"]
-[connection signal="pressed" from="Popup/Restart Game Button" to="." method="_on_Restart_Game_Button_pressed"]
+[connection signal="pressed" from="Popup/Resume Button" to="." method="_on_Resume_Button_pressed"]
 [connection signal="pressed" from="Popup/Restart Game Button" to="Popup" method="_on_Restart_Game_Button_pressed"]
-[connection signal="pressed" from="Popup/Main Menu Button" to="." method="_on_Main_Menu_Button_pressed"]
+[connection signal="pressed" from="Popup/Restart Game Button" to="." method="_on_Restart_Game_Button_pressed"]
 [connection signal="pressed" from="Popup/Main Menu Button" to="Popup" method="_on_Main_Menu_Button_pressed"]
+[connection signal="pressed" from="Popup/Main Menu Button" to="." method="_on_Main_Menu_Button_pressed"]
