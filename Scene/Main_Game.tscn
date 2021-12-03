@@ -411,10 +411,10 @@ zoomMax = 3.5
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause_Button" parent="CanvasLayer" instance=ExtResource( 12 )]
-position = Vector2( 101.934, 56.851 )
+position = Vector2( 40.6795, 61.3884 )
 
 [node name="Currency" type="Node2D" parent="CanvasLayer"]
-position = Vector2( 127.279, 59.775 )
+position = Vector2( 97.7861, 55.2376 )
 script = ExtResource( 5 )
 
 [node name="Human Timer Label" type="Label" parent="CanvasLayer/Currency"]
