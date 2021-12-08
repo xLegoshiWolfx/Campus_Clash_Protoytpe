@@ -18,6 +18,7 @@ var target_max = 1
 
 var moving_unit = load("res://Unit/medievalUnit_01.png")
 
+
 #Attacking
 var attack_range = 25
 var attack_target = null

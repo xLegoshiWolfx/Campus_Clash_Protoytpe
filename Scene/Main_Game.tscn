@@ -109,13 +109,9 @@ __meta__ = {
 }
 
 [node name="Human Birta Building" type="KinematicBody2D" parent="."]
-visible = false
 position = Vector2( 306.13, 49.7428 )
 scale = Vector2( 0.118, 0.156 )
 script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="BirtaCollision" type="CollisionShape2D" parent="Human Birta Building"]
 position = Vector2( -2286.64, -61.5903 )
@@ -143,7 +139,6 @@ __meta__ = {
 }
 
 [node name="Human Birta Building2" type="KinematicBody2D" parent="."]
-visible = false
 position = Vector2( 126.958, 466.536 )
 scale = Vector2( 0.118, 0.156 )
 script = ExtResource( 11 )
@@ -338,7 +333,6 @@ __meta__ = {
 }
 
 [node name="Unit2" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
-visible = false
 material = SubResource( 3 )
 position = Vector2( 464.21, 605.549 )
 
@@ -355,7 +349,6 @@ texture_progress = ExtResource( 6 )
 nine_patch_stretch = true
 
 [node name="Unit3" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
-visible = false
 material = SubResource( 4 )
 position = Vector2( 930.686, 282.404 )
 unit_owner = 1
@@ -377,7 +370,6 @@ __meta__ = {
 }
 
 [node name="Unit4" parent="Moving_unit/YSort" instance=ExtResource( 15 )]
-visible = false
 material = SubResource( 4 )
 position = Vector2( 943.835, 361.298 )
 unit_owner = 1

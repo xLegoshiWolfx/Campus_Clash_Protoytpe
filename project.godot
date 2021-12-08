@@ -33,13 +33,13 @@ config/icon="res://icon.png"
 [autoload]
 
 Audio1="*res://Audio/Audio_1.tscn"
+Globals="*res://Singletons/Globals.gd"
 
 [display]
 
 window/size/width=1600
 window/size/height=900
 window/size/resizable=false
-window/size/fullscreen=true
 
 [global]
 
