@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://PNG/character_malePerson_sheetHD.png" type="Texture" id=1]
+[ext_resource path="res://Character.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Running_right"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 29 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Walk_right"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 37, 38, 39, 40, 41, 42, 43 ]
+}
+
+[node name="Units" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1.46619, 0 )
+texture = ExtResource( 1 )
+hframes = 9
+vframes = 5
+frame = 37
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Running_right = SubResource( 1 )
+anims/Walk_right = SubResource( 2 )
