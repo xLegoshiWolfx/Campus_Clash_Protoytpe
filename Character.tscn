@@ -1,52 +1,39 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://PNG/character_malePerson_sheetHD.png" type="Texture" id=1]
-[ext_resource path="res://Character.gd" type="Script" id=2]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
+[ext_resource path="res://Scene/Walk_right.tres" type="Animation" id=3]
+[ext_resource path="res://Scene/Running_right.tres" type="Animation" id=4]
+[ext_resource path="res://Walking_right.tres" type="Animation" id=5]
+[ext_resource path="res://Idle.tres" type="Animation" id=6]
+[ext_resource path="res://Scene/Run.tres" type="Animation" id=7]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Running_right"
-length = 0.7
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 24, 25, 26, 29 ]
-}
+[sub_resource type="GDScript" id=1]
 
-[sub_resource type="Animation" id=2]
-resource_name = "Walk_right"
-length = 1.5
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 37, 38, 39, 40, 41, 42, 43 ]
-}
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 35.7773, 85.6732 )
 
 [node name="Units" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1.46619, 0 )
+[node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( 596.762, 435.474 )
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 5
-frame = 37
+frame = 24
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Running_right = SubResource( 1 )
-anims/Walk_right = SubResource( 2 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+position = Vector2( 598.317, 474.97 )
+shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+root_node = NodePath("../Sprite")
+anims/Idle = ExtResource( 6 )
+anims/Run = ExtResource( 7 )
+anims/Running_right = ExtResource( 4 )
+anims/Walk_right = ExtResource( 3 )
+anims/Walking_right = ExtResource( 5 )

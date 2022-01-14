@@ -116,3 +116,12 @@ func take_damage(amount) -> bool:
 		
 func get_state():
 	return state_machine.state		
+
+func _physics_process(delta):
+	if Input.is_action_just_pressed("ui_right"):
+		$AnimationPlayer.play("Walk_right");
+		get_node("Selected").set_flip_h(false)
+		
+	if Input.is_action_just_pressed("ui_left"):
+		$AnimationPlayer.play("Walk_right");
+		get_node("Selected").set_flip_h(true)
