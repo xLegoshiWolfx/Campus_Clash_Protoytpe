@@ -7,12 +7,12 @@ func _physics_process(delta):
 	velocity.x = 0
 	
 	if Input.is_action_pressed("command+right"):
-		velocity.x += speed
+		velocity.x += (speed * 3)
 		get_node("Sprite").set_flip_h(false)
 		$AnimationPlayer.play("Run")
 	
 	elif Input.is_action_pressed("command+left"):
-		velocity.x -= speed
+		velocity.x -= (speed * 3)
 		get_node("Sprite").set_flip_h(true)
 		$AnimationPlayer.play("Run")
 		

@@ -563,7 +563,7 @@ __meta__ = {
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Units" parent="Node2D" instance=ExtResource( 23 )]
-position = Vector2( 391.878, 724.205 )
+position = Vector2( 126.784, 282.382 )
 
 [connection signal="timeout" from="CanvasLayer/Currency/Human Timer Node" to="CanvasLayer/Currency" method="_on_Human_Timer_Node_timeout"]
 [connection signal="timeout" from="CanvasLayer/Currency/AI Timer Node" to="CanvasLayer/Currency" method="_on_AI_Timer_Node_timeout"]

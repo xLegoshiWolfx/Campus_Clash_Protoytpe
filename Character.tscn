@@ -11,7 +11,7 @@
 [sub_resource type="GDScript" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 35.7773, 85.6732 )
+extents = Vector2( 13.62, 29.227 )
 
 [node name="Units" type="Node2D"]
 script = SubResource( 1 )
@@ -20,14 +20,15 @@ script = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
-position = Vector2( 596.762, 435.474 )
+position = Vector2( 530.335, 520.487 )
+scale = Vector2( 0.308051, 0.335837 )
 texture = ExtResource( 1 )
 hframes = 9
 vframes = 5
-frame = 24
+frame = 39
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( 598.317, 474.97 )
+position = Vector2( 529.988, 533.039 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
