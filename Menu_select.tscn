@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menu_select.gd" type="Script" id=1]
+
+[node name="Menu_select" type="Node2D"]
+script = ExtResource( 1 )
+dropdown_path = NodePath("dropdown_menu")
+
+[node name="dropdown_menu" type="OptionButton" parent="."]
+margin_right = 338.0
+margin_bottom = 39.0
+flat = true
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

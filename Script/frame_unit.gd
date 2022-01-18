@@ -43,7 +43,6 @@ onready var collision_shape = $CollisionShape2D
 func _ready():
 	movement_target = position
 
-
 func move_to_target(delta, tar):
 	velocity = Vector2.ZERO
 	velocity = position.direction_to(tar) * speed
