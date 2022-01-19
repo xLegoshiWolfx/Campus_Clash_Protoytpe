@@ -6,7 +6,7 @@
 
 [sub_resource type="ShaderMaterial" id=1]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 resource_name = "Idle_hands_back"
 length = 2.5
 loop = true
@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ 0, 23 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "Idle_hands_on_jaw"
 length = 2.2
 loop = true
@@ -40,7 +40,7 @@ tracks/0/keys = {
 "values": [ 0, 30 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "Run_right"
 length = 0.8
 loop = true
@@ -57,8 +57,7 @@ tracks/0/keys = {
 "values": [ 26, 25, 24, 29 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Walk_right"
+[sub_resource type="Animation" id=5]
 length = 1.5
 loop = true
 tracks/0/type = "value"
@@ -74,10 +73,10 @@ tracks/0/keys = {
 "values": [ 37, 38, 39, 40, 41, 42, 36, 37, 43 ]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 5.9015, 11.7 )
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=7]
 radius = 149.388
 
 [node name="Unit" type="KinematicBody2D" groups=[
@@ -94,10 +93,10 @@ hframes = 9
 vframes = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Idle_hands_back = SubResource( 6 )
-anims/Idle_hands_on_jaw = SubResource( 7 )
-anims/Run_right = SubResource( 5 )
-anims/Walk_right = SubResource( 2 )
+anims/Idle_hands_back = SubResource( 2 )
+anims/Idle_hands_on_jaw = SubResource( 3 )
+anims/Run_right = SubResource( 4 )
+anims/Walk_right = SubResource( 5 )
 
 [node name="StopTimer" type="Timer" parent="."]
 
@@ -105,7 +104,7 @@ anims/Walk_right = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 162.266, 86.2373 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 disabled = true
 
 [node name="VisionRange" type="Area2D" parent="." groups=[
@@ -114,7 +113,7 @@ disabled = true
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisionRange"]
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 disabled = true
 
 [connection signal="timeout" from="StopTimer" to="UnitSM" method="_on_StopTimer_timeout"]
