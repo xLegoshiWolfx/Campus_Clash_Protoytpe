@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Tile Map/Isometric_Tile_map.tres" type="TileSet" id=1]
 [ext_resource path="res://Script/CameraMovement.gd" type="Script" id=2]
@@ -22,7 +22,6 @@
 [ext_resource path="res://Script/AI Birta Building3.gd" type="Script" id=20]
 [ext_resource path="res://Script/Human Main Building.gd" type="Script" id=21]
 [ext_resource path="res://Script/AI Main Building.gd" type="Script" id=22]
-[ext_resource path="res://Character.tscn" type="PackedScene" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1349.06, 1688.78 )
@@ -560,14 +559,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Units" parent="Node2D" instance=ExtResource( 23 )]
-position = Vector2( 126.784, 282.382 )
-
 [connection signal="timeout" from="CanvasLayer/Currency/Human Timer Node" to="CanvasLayer/Currency" method="_on_Human_Timer_Node_timeout"]
-[connection signal="timeout" from="CanvasLayer/Currency/AI Timer Node" to="CanvasLayer/Currency" method="_on_AI_Timer_Node_timeout"]
 [connection signal="timeout" from="CanvasLayer/Currency/AI Timer Node" to="CanvasLayer/Currency/HumanBuildingButton5" method="_on_AI_Timer_Node_timeout"]
+[connection signal="timeout" from="CanvasLayer/Currency/AI Timer Node" to="CanvasLayer/Currency" method="_on_AI_Timer_Node_timeout"]
 [connection signal="pressed" from="CanvasLayer/Currency/HumanBuildingButton5" to="CanvasLayer/Currency" method="_on_HumanBuildingButton5_pressed"]
 [connection signal="pressed" from="CanvasLayer/Currency/HumanBuildingButton25" to="CanvasLayer/Currency" method="_on_HumanBuildingButton25_pressed"]
 [connection signal="pressed" from="CanvasLayer/Currency/HumanBuildingButton100" to="CanvasLayer/Currency" method="_on_HumanBuildingButton100_pressed"]
