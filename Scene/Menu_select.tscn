@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Script/Menu_select.gd" type="Script" id=1]
+[ext_resource path="res://PNG/Chloe_Tower.png" type="Texture" id=2]
 
 [node name="Menu_select" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,3 +15,9 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Chloe Tower" type="Sprite" parent="."]
+position = Vector2( -293.398, -227.958 )
+scale = Vector2( 0.326455, 0.305137 )
+texture = ExtResource( 2 )
+offset = Vector2( 3400, 2100 )
